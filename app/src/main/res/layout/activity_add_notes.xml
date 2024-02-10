@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+
+    <data>
+
+        <variable
+            name="notes"
+            type="com.example.todoworkmanager.WorkModel" />
+        <variable
+            name="addNotesBtnHandler"
+            type="com.example.todoworkmanager.AddNotesBtnHandler" />
+
+        <variable
+            name="btnBack"
+            type="com.example.todoworkmanager.BackBtnHandler" />
+    </data>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  android:background="@color/black_primary"
+    tools:context=".AddNotes">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:onClick="@{btnBack::backBtnClick}"
+        android:layout_marginTop="10dp"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp">
+
+
+
+    <TextView
+        android:id="@+id/addNotesTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Notes"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/amarante"
+        android:textSize="25dp"
+        android:layout_marginBottom="100dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/notesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:background="@drawable/edit_back"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#A8FFFFFF"
+        android:textIsSelectable="true"
+        android:elevation="8dp"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/notesDisc"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="Discription"
+        android:background="@drawable/edit_back"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#B9FFFFFF"
+        android:elevation="8dp"
+        android:textIsSelectable="true"
+        ></EditText>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:onClick="@{addNotesBtnHandler::addNewNotes}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_back"
+        android:text="@{"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        ></androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+</RelativeLayout>
+
+</layout>
